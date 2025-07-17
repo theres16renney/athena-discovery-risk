@@ -704,7 +704,7 @@ const Chat = () => {
   const onShowCitation = (citation: Citation) => {
     console.log('citation.url = ' + citation.url)
     if (citation.url) {
-      citation.url = citation.url.replace("stvitalitygl375479395588.blob.core.windows.net/athena-blob-container", "vitality-athena.azurewebsites.net/specifications")
+      citation.url = citation.url.replace("stvitalitygl375479395588.blob.core.windows.net/athena-uk-blob-container", "https://vitality-athena-uk-1.azurewebsites.net/specifications")
     }
     setActiveCitation(citation)
     setIsCitationPanelOpen(true)
