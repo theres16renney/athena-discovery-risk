@@ -5,3 +5,11 @@ frontend/node_modules
 .azure/
 __pycache__/
 .ipynb_checkpoints/
+/.idea/misc.xml
+/.idea/modules.xml
+/.idea/libraries/my_test_package.xml
+/.idea/prettier.xml
+/.idea/inspectionProfiles/Project_Default.xml
+/.idea/sonarlint.xml
+/.idea/vcs.xml
+/.idea/.gitignore
