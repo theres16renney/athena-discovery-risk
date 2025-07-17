@@ -702,6 +702,7 @@ const Chat = () => {
   }, [showLoadingMessage, processMessages])
 
   const onShowCitation = (citation: Citation) => {
+    console.log('citation.url = ' + citation.url)
     if (citation.url) {
       citation.url = citation.url.replace("stvitalitygl375479395588.blob.core.windows.net/athena-blob-container", "vitality-athena.azurewebsites.net/specifications")
     }
@@ -719,22 +720,6 @@ const Chat = () => {
     }
   }
 
-  const onViewSourceDevPortal = (citation: Citation) => {
-    if (citation.title) {
-      if (citation.title.includes('Micro Service Endpoint Specification')) {
-        let text = parseTitle(citation.title, "endpoints")
-        window.open(text, '_blank')
-      }
-      else if (citation.title.includes('Micro Service Specification')) {
-        let text = parseTitle(citation.title, "microservices")
-        window.open(text, '_blank')
-      }
-      else if (citation.title.includes('Bounded Context Specification') || citation.title.includes('Logical Model Specification')) {
-        let text = parseTitle(citation.title, "contexts")
-        window.open(text, '_blank')
-      }
-    }
-  }
 
   const parseTitle = (title: string, domain : string) : string => {
     if (title) {
@@ -1005,16 +990,6 @@ const Chat = () => {
                 onClick={() => onViewSource(activeCitation)}>
                 {activeCitation.title}
               </h5>
-                <h3
-                    className={styles.citationPanelDevPortalTitle}
-                    tabIndex={0}
-                    hidden={
-                      !(activeCitation.url && !activeCitation.url.includes('catalogue') && !activeCitation.url.includes('logs') && !activeCitation.url.includes('reference-data'))
-                    }
-                    title='Developer Portal'
-                    onClick={() => onViewSourceDevPortal(activeCitation)}>
-                  Developer Portal
-                </h3>
               <div tabIndex={0}>
                 <ReactMarkdown
                   linkTarget="_blank"
